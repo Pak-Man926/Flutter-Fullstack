@@ -1,5 +1,6 @@
 import 'package:myproject_server/src/birthday_reminder.dart';
 import 'package:serverpod/serverpod.dart';
+import "package:serverpod_auth_server/serverpod_auth_server.dart" as auth;
 
 import 'package:myproject_server/src/web/routes/root.dart';
 
@@ -16,6 +17,7 @@ void run(List<String> args) async {
     args,
     Protocol(),
     Endpoints(),
+    authenticationHandler: auth.authenticationHandler,
   );
 
   // Setup a default page at the web root.
