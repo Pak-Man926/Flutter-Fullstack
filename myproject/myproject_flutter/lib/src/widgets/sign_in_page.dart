@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:myproject_flutter/main.dart";
+//import "package:myproject_flutter/main.dart";
 import "package:serverpod_auth_email_flutter/serverpod_auth_email_flutter.dart";
 import "package:myproject_flutter/src/serverpod_client.dart";
 
