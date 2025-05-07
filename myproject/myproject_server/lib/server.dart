@@ -33,10 +33,14 @@ void run(List<String> args) async {
     sendValidationEmail: (session, email, validationCode) async
     {
       print("Validation code: $validationCode");
+
+      return true;
     },
     sendPasswordResetEmail: (session, UserInfo, validationCode) async
     {
       print("Password reset code: $validationCode");
+
+      return true;
     }
   ));
 
