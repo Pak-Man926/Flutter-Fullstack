@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 //import 'package:serverpod_flutter/serverpod_flutter.dart';
 import "package:myproject_flutter/src/serverpod_client.dart";
 import "package:myproject_flutter/src/widgets/sign_in_page.dart";
+import "package:myproject_flutter/src/widgets/account_page.dart";
 
 void main() async
 {
@@ -42,6 +43,17 @@ class HomePage extends StatefulWidget
 
 class _HomePageState extends State<HomePage>
 {
+
+  void initState()
+  {
+    super.initState();
+
+    sessionManager.addListener((){
+      setState((){
+
+      });
+    });
+  }
   @override
   Widget build(BuildContext context)
   {
@@ -49,7 +61,7 @@ class _HomePageState extends State<HomePage>
       appBar:AppBar(
         title: Text(widget.title),
       ),
-      body: SignInPage(),
+      body: sessionManager.isSignedIn ?  AccountPage() :  SignInPage(),
     );
   }
 }

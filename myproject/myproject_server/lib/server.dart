@@ -1,5 +1,7 @@
+import 'package:mailer/smtp_server.dart';
 import 'package:serverpod/serverpod.dart';
 import "package:serverpod_auth_server/serverpod_auth_server.dart" as auth;
+import 'package:mailer/mailer.dart';
 
 import 'package:myproject_server/src/web/routes/root.dart';
 
@@ -31,17 +33,56 @@ void run(List<String> args) async {
   auth.AuthConfig.set(auth.AuthConfig(
     sendValidationEmail: (session, email, validationCode) async
     {
-      print("Validation code: $validationCode");
+      final gmailEmail = session.serverpod.getPassword("gmailEmail");
+      final gmailPassword = session.serverpod.getPassword("gmailPassword");
+      // print("Validation code: $validationCode");
+
+      final smtpServer =gmail(gmailEmail?, gmailPassword?);
+
+      final message = Message()
+        ..from = Address(gmailEmail)
+        ..recipients.add(email)
+        ..subject = "Validation Code"
+        ..html = "Your verification code is: $validationCode";
+
+        try{
+          await send(message, smtpServer);
+        }
+        catch (_)
+        {
+          return false;
+        }
 
       return true;
     },
     sendPasswordResetEmail: (session, UserInfo, validationCode) async
     {
-      print("Password reset code: $validationCode");
+      final gmailEmail = session.serverpod.getPassword("gmailEmail");
+      final gmailPassword = session.serverpod.getPassword("gmailPassword");
+      //print("Password reset code: $validationCode");
+
+      final smtpServer = gmail(gmailEmail, gmailPassword);
+
+      final message = Message()
+        ..from = Address(gmailEmail)
+        ..recipients.add(UserInfo.email)
+        ..subject = "Password Reset link"
+        ..html = "Here is your password reset code: $validationCode";
+
+        try{
+          await send(message, smtpServer);
+        }
+        catch (_)
+        {
+          return false;
+        }
 
       return true;
     }
   ));
+
+  // final gmailEmail = session.serverpod.getPassword("gmailEmail");
+  // final gmailPassword = session.serverpod.getPassword("gmailPassword");
 
   // Start the server.
   await pod.start();
@@ -77,6 +118,6 @@ void run(List<String> args) async {
 ///
 /// This is better than using a string literal, as it will reduce the risk of
 /// typos and make it easier to refactor the code.
-enum FutureCallNames {
-  birthdayReminder,
-}
+// enum FutureCallNames {
+//   birthdayReminder,
+// }
