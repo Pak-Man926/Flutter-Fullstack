@@ -1,9 +1,7 @@
 import "package:flutter/material.dart";
 import "package:serverpod_auth_shared_flutter/serverpod_auth_shared_flutter.dart";
-//import "package:myproject_server/src/server.dart";
 
-
-import  "package:serverpod_client/serverpod_client.dart";
+import  "package:myproject_flutter/src/serverpod_client.dart";
 
 class AccountPage extends StatelessWidget
 {
@@ -18,6 +16,18 @@ class AccountPage extends StatelessWidget
           leading: CircularUserImage(
             userInfo: sessionManager.signedInUser,
             size: 42,
+          ),
+          title: Text(sessionManager.signedInUser!.userName ?? ""),
+          subtitle: Text(sessionManager.signedInUser!.email ?? ""),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(16),
+          child: ElevatedButton(
+            onPressed: ()
+            {
+              sessionManager.signOut();
+            },
+            child: const Text("Sign Out")
           )
         )
       ]
