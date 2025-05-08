@@ -1,4 +1,3 @@
-import 'package:myproject_server/src/birthday_reminder.dart';
 import 'package:serverpod/serverpod.dart';
 import "package:serverpod_auth_server/serverpod_auth_server.dart" as auth;
 

@@ -6,6 +6,8 @@ import "package:myproject_flutter/src/serverpod_client.dart";
 
 class SignInPage extends StatelessWidget
 {
+  const SignInPage({super.key});
+
   @override
   Widget build(BuildContext context)
   {
