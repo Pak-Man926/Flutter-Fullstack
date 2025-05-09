@@ -1,0 +1,12 @@
+class: Register
+fields:
+    ### The email address of the user.
+    email: String
+    ### The password of the user.
+    password: String
+    ### The name of the user.
+    name: String
+    ### The phone number of the user.
+    phone: String
+    ### The address of the user.
+    address: String
