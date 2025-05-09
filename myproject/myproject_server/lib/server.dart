@@ -37,7 +37,10 @@ void run(List<String> args) async {
       final gmailPassword = session.serverpod.getPassword("gmailPassword");
       // print("Validation code: $validationCode");
 
-      final smtpServer =gmail(gmailEmail, gmailPassword?);
+      if (gmailEmail == null || gmailPassword == null) {
+        throw Exception('Gmail credentials are not set.');
+      }
+      final smtpServer = gmail(gmailEmail, gmailPassword);
 
       final message = Message()
         ..from = Address(gmailEmail)
@@ -60,7 +63,9 @@ void run(List<String> args) async {
       final gmailEmail = session.serverpod.getPassword("gmailEmail");
       final gmailPassword = session.serverpod.getPassword("gmailPassword");
       //print("Password reset code: $validationCode");
-
+      if (gmailEmail == null || gmailPassword == null) {
+        throw Exception('Gmail credentials are not set.');
+      }
       final smtpServer = gmail(gmailEmail, gmailPassword);
 
       final message = Message()
