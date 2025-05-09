@@ -1,4 +1,5 @@
 class: Register
+table: register
 fields:
     ### The email address of the user.
     email: String
