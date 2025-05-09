@@ -26,10 +26,14 @@ void main() {
   client = Client(serverUrl)
     ..connectivityMonitor = FlutterConnectivityMonitor();
 
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget
 {
-  
+  @override
+  Widget build(BuildContext context)
+  {
+    return MaterialApp();
+  }
 }
