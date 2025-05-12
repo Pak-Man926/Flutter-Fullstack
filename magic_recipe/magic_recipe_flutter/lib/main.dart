@@ -68,29 +68,24 @@ class MyHomePageState extends State<MyHomePage> {
   /// Calls the `hello` method of the `greeting` endpoint. Will set either the
   /// `_resultMessage` or `_errorMessage` field, depending on if the call
   /// is successful.
-  void _callGenerateRecipe() async
-  {
-    try
-    {
-      setState(()
-      {
+  void _callGenerateRecipe() async {
+    try {
+      setState(() {
         _errorMessage = null;
         _resultMessage = null;
         _loading = true;
       });
 
-      final result = await client.recipe.generateRecipe(_textEditingController.text);
+      final result =
+          await client.recipe.generateRecipe(_textEditingController.text);
 
-      setState(()
-      {
+      setState(() {
         _errorMessage = null;
         _resultMessage = result;
         _loading = false;
       });
-    }
-    catch (e)
-    {
-      setState((){
+    } catch (e) {
+      setState(() {
         _errorMessage = '$e';
         _resultMessage = null;
         _loading = false;
@@ -108,25 +103,33 @@ class MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 16.0),
-              child: TextField(
-                controller: _textEditingController,
-                decoration: const InputDecoration(
-                  hintText: 'Enter your ingredients here:',
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 16.0),
+                      child: TextField(
+                        controller: _textEditingController,
+                        decoration: const InputDecoration(
+                          hintText: 'Enter your ingredients here:',
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 16.0),
+                      child: ElevatedButton(
+                        onPressed: _loading ? null : _callGenerateRecipe,
+                        child: const Text('Send to Server'),
+                      ),
+                    ),
+                    ResultDisplay(
+                      resultMessage: _resultMessage,
+                      errorMessage: _errorMessage,
+                    ),
+                  ],
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 16.0),
-              child: ElevatedButton(
-                onPressed: _loading ? null : _callGenerateRecipe,
-                child: const Text('Send to Server'),
-              ),
-            ),
-            ResultDisplay(
-              resultMessage: _resultMessage,
-              errorMessage: _errorMessage,
             ),
           ],
         ),
