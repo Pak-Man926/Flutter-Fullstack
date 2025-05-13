@@ -55,9 +55,11 @@ class MyHomePage extends StatefulWidget {
 
 class MyHomePageState extends State<MyHomePage> {
   /// Holds the last result or null if no result exists yet.
-  String? _resultMessage;
+  //String? _resultMessage;
 
   Recipe? _recipe;
+
+  List<Recipe> _recipeHistory = [];
 
   /// Holds the last error message that we've received from the server or null if no
   /// error exists yet.
@@ -96,46 +98,84 @@ class MyHomePageState extends State<MyHomePage> {
   }
 
   @override
+  void initSatet()
+  {
+    super.initState();
+
+    client.recipe.getRecipes().then((favouriteRecipes)
+    {
+      setState((){
+        _recipeHistory = favouriteRecipes;
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 16.0),
-                      child: TextField(
-                        controller: _textEditingController,
-                        decoration: const InputDecoration(
-                          hintText: 'Enter your ingredients here:',
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 16.0),
-                      child: ElevatedButton(
-                        onPressed: _loading ? null : _callGenerateRecipe,
-                        child: _loading ? const Text('Loading...') : const Text('Generate Recipe'),
-                      ),
-                    ),
-                    ResultDisplay(
-                      resultMessage: _recipe != null ? '${_recipe?.author} on ${_recipe?.date}: \n ${_recipe?.text}' : null,
-                      errorMessage: _errorMessage,
-                    ),
-                  ],
-                ),
-              ),
+      body:Row(
+        children: [
+          Expanded(
+            child: DecoratedBox(
+              decoration: BoxDecoration(color: Colors.grey[300]),
+              child: ListView.builder(
+                itemCount: _recipeHistory.length,
+                itemBuilder: (context, index)
+                {
+                  final recipe = _recipeHistory[index];
+                  return ListTile(
+                    title: Text(recipe.text.substring(0, recipe.text.indexOf('\n'))),
+                    subtitle: Text('${recipe.author} - ${recipe.date}'),
+                    onTap: () {
+                      _textEditingController.text = recipe.ingredients;
+
+                      setState((){
+                        _recipe = recipe;
+                      });
+                    }
+                  );
+                }),
             ),
-          ],
-        ),
-      ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 16),
+                    child: TextField(
+                      controller: _textEditingController,
+                      decoration: const InputDecoration(
+                        hintText: "Enter your ingredients here...."
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 16),
+                    child: ElevatedButton(
+                      onPressed: _loading ? null : _callGenerateRecipe,
+                      child: _loading ? const Text("Loading....") : const Text("Generate Recipe"),
+                      ),
+                  ),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: ResultDisplay(
+                        resultMessage : _recipe != null ? '${_recipe?.author} on ${_recipe?.date}: \n ${_recipe?.text}' : null,
+                        errorMessage: _errorMessage,
+                      )
+                    )
+                  )
+                ]
+              )
+            )
+          )
+        ]
+      )
     );
   }
 }
