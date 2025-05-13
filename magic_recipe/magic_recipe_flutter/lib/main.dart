@@ -57,6 +57,8 @@ class MyHomePageState extends State<MyHomePage> {
   /// Holds the last result or null if no result exists yet.
   String? _resultMessage;
 
+  Recipe? _recipe;
+
   /// Holds the last error message that we've received from the server or null if no
   /// error exists yet.
   String? _errorMessage;
@@ -72,7 +74,7 @@ class MyHomePageState extends State<MyHomePage> {
     try {
       setState(() {
         _errorMessage = null;
-        _resultMessage = null;
+        _recipe = null;
         _loading = true;
       });
 
@@ -81,13 +83,13 @@ class MyHomePageState extends State<MyHomePage> {
 
       setState(() {
         _errorMessage = null;
-        _resultMessage = result;
+        _recipe = result;
         _loading = false;
       });
     } catch (e) {
       setState(() {
         _errorMessage = '$e';
-        _resultMessage = null;
+        _recipe = null;
         _loading = false;
       });
     }
@@ -120,11 +122,11 @@ class MyHomePageState extends State<MyHomePage> {
                       padding: const EdgeInsets.only(bottom: 16.0),
                       child: ElevatedButton(
                         onPressed: _loading ? null : _callGenerateRecipe,
-                        child: const Text('Send to Server'),
+                        child: _loading ? const Text('Loading...') : const Text('Generate Recipe'),
                       ),
                     ),
                     ResultDisplay(
-                      resultMessage: _resultMessage,
+                      resultMessage: _recipe != null ? '${_recipe?.author} on ${_recipe?.date}: \n ${_recipe?.text}' : null,
                       errorMessage: _errorMessage,
                     ),
                   ],
