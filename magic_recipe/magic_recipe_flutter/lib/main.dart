@@ -33,13 +33,15 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+   {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Serverpod Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Serverpod Example'),
+      home: const MyHomePage(title: 'Recipe Generator'),
     );
   }
 }
@@ -98,7 +100,7 @@ class MyHomePageState extends State<MyHomePage> {
   }
 
   @override
-  void initSatet()
+  void initState()
   {
     super.initState();
 
