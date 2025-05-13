@@ -1,0 +1,4 @@
+type: server
+
+client_package_path: ../setup_client
+server_test_tools_path: test/integration/test_tools
