@@ -41,6 +41,17 @@ class RecipeEndpoint extends Endpoint
       ingredients: ingredients,
     );
 
-    return recipe;
+    final recipeWithId = await Recipe.db.insertRow(session, recipe);
+
+    return recipeWithId;
+  }
+
+  Future<List<Recipe>> getRecipes(Session session) async
+  {
+    return Recipe.db.find(
+      session,
+      orderBy: (t) => t.date,
+      orderDescending: true,
+    );
   }
 }
