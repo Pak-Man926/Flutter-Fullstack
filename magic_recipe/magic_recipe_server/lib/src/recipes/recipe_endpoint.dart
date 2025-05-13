@@ -1,11 +1,12 @@
 import "dart:async";
 
 import 'package:google_generative_ai/google_generative_ai.dart';
+import 'package:magic_recipe_server/src/generated/protocol.dart';
 import 'package:serverpod/serverpod.dart';
 
 class RecipeEndpoint extends Endpoint 
 {
-  Future<String> generateRecipe(Session session, String ingredients) async
+  Future<Recipe> generateRecipe(Session session, String ingredients) async
   {
     final geminiApikey = session.passwords['gemini'];
 
@@ -33,6 +34,13 @@ class RecipeEndpoint extends Endpoint
       throw Exception('No response from Gemini API');
     }
 
-    return responseText;
+    final recipe = Recipe(
+      author: "Gemini",
+      text: responseText,
+      date: DateTime.now(),
+      ingredients: ingredients,
+    );
+
+    return recipe;
   }
 }
