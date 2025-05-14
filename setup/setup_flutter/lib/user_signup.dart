@@ -123,9 +123,10 @@ class _SignUpState extends State<SignUp> {
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
                 //Call to the endpoint to register user
-                _register();
+               await  _register();
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(
