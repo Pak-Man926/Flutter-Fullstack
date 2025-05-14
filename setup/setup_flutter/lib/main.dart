@@ -1,6 +1,7 @@
 import 'package:setup_client/setup_client.dart';
 import 'package:flutter/material.dart';
 import 'package:serverpod_flutter/serverpod_flutter.dart';
+import "package:setup_flutter/user_signup.dart";
 
 /// Sets up a global client object that can be used to talk to the server from
 /// anywhere in our app. The client is generated from your server code
@@ -61,24 +62,24 @@ class MyHomePageState extends State<MyHomePage> {
   /// error exists yet.
   String? _errorMessage;
 
-  final _textEditingController = TextEditingController();
+  //final _textEditingController = TextEditingController();
 
   /// Calls the `hello` method of the `greeting` endpoint. Will set either the
   /// `_resultMessage` or `_errorMessage` field, depending on if the call
   /// is successful.
-  void _callHello() async {
-    try {
-      final result = await client.greeting.hello(_textEditingController.text);
-      setState(() {
-        _errorMessage = null;
-        _resultMessage = result.message;
-      });
-    } catch (e) {
-      setState(() {
-        _errorMessage = '$e';
-      });
-    }
-  }
+  // void _callHello() async {
+  //   try {
+  //     final result = await client.greeting.hello(_textEditingController.text);
+  //     setState(() {
+  //       _errorMessage = null;
+  //       _resultMessage = result.message;
+  //     });
+  //   } catch (e) {
+  //     setState(() {
+  //       _errorMessage = '$e';
+  //     });
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -86,33 +87,14 @@ class MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
+      body:Center(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 16.0),
-              child: TextField(
-                controller: _textEditingController,
-                decoration: const InputDecoration(
-                  hintText: 'Enter your name',
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 16.0),
-              child: ElevatedButton(
-                onPressed: _callHello,
-                child: const Text('Send to Server'),
-              ),
-            ),
-            ResultDisplay(
-              resultMessage: _resultMessage,
-              errorMessage: _errorMessage,
-            ),
-          ],
-        ),
-      ),
+            
+          ]
+        )
+      )
     );
   }
 }
