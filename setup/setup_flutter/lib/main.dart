@@ -2,6 +2,7 @@ import 'package:setup_client/setup_client.dart';
 import 'package:flutter/material.dart';
 import 'package:serverpod_flutter/serverpod_flutter.dart';
 import "package:setup_flutter/user_signup.dart";
+import "package:setup_flutter/user_login.dart";
 
 /// Sets up a global client object that can be used to talk to the server from
 /// anywhere in our app. The client is generated from your server code
@@ -91,7 +92,31 @@ class MyHomePageState extends State<MyHomePage> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            
+            ElevatedButton(
+              onPressed: ()
+                  {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUp(),
+                      ),
+                    );
+                  },
+             child: Text("Sign Up")
+             ),
+             SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: ()
+                    {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Login(),
+                        ),
+                      );
+                    }, 
+                    child: Text("Login")
+              )
           ]
         )
       )
@@ -101,7 +126,7 @@ class MyHomePageState extends State<MyHomePage> {
 
 /// ResultDisplays shows the result of the call. Either the returned result from
 /// the `example.greeting` endpoint method or an error message.
-class ResultDisplay extends StatelessWidget {
+// class ResultDisplay extends StatelessWidget {
   final String? resultMessage;
   final String? errorMessage;
 
