@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:setup_client/setup_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
+import "package:setup_flutter/homepage.dart";
 
 class Login extends StatefulWidget
 {
@@ -97,7 +98,13 @@ class _LoginState extends State<Login>
               onPressed: () async {
                 // Call to the endpoint to login user
                await _login();
-               
+
+               Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>  Homepage(),
+                  ),
+                );
               },
               child: Text('Login'),
             ),
