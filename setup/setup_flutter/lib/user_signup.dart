@@ -3,7 +3,7 @@ import "packAGE:flutter/material.dart";
 class SignUp extends StatelessWidget
 {
   const SignUp({super.key});
-  
+
   @override
   Widget build(BuildContext context)
   {
@@ -56,6 +56,7 @@ class SignUp extends StatelessWidget
             ElevatedButton(
               onPressed: () {
                 //Call to the endpoint to register user
+                bool success = await client.auth.register('user@example.com', 'passwordHash');
               },
               child: Text('Sign Up'),
             ),

@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Serverpod Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -57,11 +58,11 @@ class MyHomePage extends StatefulWidget {
 
 class MyHomePageState extends State<MyHomePage> {
   /// Holds the last result or null if no result exists yet.
-  String? _resultMessage;
+  // String? _resultMessage;
 
   /// Holds the last error message that we've received from the server or null if no
   /// error exists yet.
-  String? _errorMessage;
+  // String? _errorMessage;
 
   //final _textEditingController = TextEditingController();
 
@@ -85,80 +86,72 @@ class MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body:Center(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: ()
-                  {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const SignUp(),
-                      ),
-                    );
-                  },
-             child: Text("Sign Up")
-             ),
-             SizedBox(width: 10),
-              ElevatedButton(
-                onPressed: ()
-                    {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Login(),
-                        ),
-                      );
-                    }, 
-                    child: Text("Login")
-              )
-          ]
-        )
-      )
-    );
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: Center(
+            child:
+                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignUp(),
+                  ),
+                );
+              },
+              child: Text("Sign Up")),
+          SizedBox(width: 10),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Login(),
+                  ),
+                );
+              },
+              child: Text("Login"))
+        ])));
   }
 }
 
 /// ResultDisplays shows the result of the call. Either the returned result from
 /// the `example.greeting` endpoint method or an error message.
 // class ResultDisplay extends StatelessWidget {
-  final String? resultMessage;
-  final String? errorMessage;
+//   final String? resultMessage;
+//   final String? errorMessage;
 
-  const ResultDisplay({
-    super.key,
-    this.resultMessage,
-    this.errorMessage,
-  });
+//   const ResultDisplay({
+//     super.key,
+//     this.resultMessage,
+//     this.errorMessage,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    String text;
-    Color backgroundColor;
-    if (errorMessage != null) {
-      backgroundColor = Colors.red[300]!;
-      text = errorMessage!;
-    } else if (resultMessage != null) {
-      backgroundColor = Colors.green[300]!;
-      text = resultMessage!;
-    } else {
-      backgroundColor = Colors.grey[300]!;
-      text = 'No server response yet.';
-    }
+//   @override
+//   Widget build(BuildContext context) {
+//     String text;
+//     Color backgroundColor;
+//     if (errorMessage != null) {
+//       backgroundColor = Colors.red[300]!;
+//       text = errorMessage!;
+//     } else if (resultMessage != null) {
+//       backgroundColor = Colors.green[300]!;
+//       text = resultMessage!;
+//     } else {
+//       backgroundColor = Colors.grey[300]!;
+//       text = 'No server response yet.';
+//     }
 
-    return ConstrainedBox(
-      constraints: const BoxConstraints(minHeight: 50),
-      child: Container(
-        color: backgroundColor,
-        child: Center(
-          child: Text(text),
-        ),
-      ),
-    );
-  }
-}
+//     return ConstrainedBox(
+//       constraints: const BoxConstraints(minHeight: 50),
+//       child: Container(
+//         color: backgroundColor,
+//         child: Center(
+//           child: Text(text),
+//         ),
+//       ),
+//     );
+//   }
+// }
