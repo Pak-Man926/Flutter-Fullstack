@@ -1,0 +1,44 @@
+services:
+  # Development services
+  postgres:
+    image: postgres:16.3
+    ports:
+      - "8090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: lg_tribe
+      POSTGRES_PASSWORD: "WGZoFqhjcA9TeeCUJfPugXcaLmhNv8HT"
+    volumes:
+      - lg_tribe_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:6.2.6
+    ports:
+      - "8091:6379"
+    command: redis-server --requirepass "PYj8_fPB7zJI7BQgeuWvTxb6G3Zj2zO8"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
+  # Test services
+  postgres_test:
+    image: postgres:16.3
+    ports:
+      - "9090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: lg_tribe_test
+      POSTGRES_PASSWORD: "Ez3uWRM1rBp95J5BQEg_32Wm3KK1buyi"
+    volumes:
+      - lg_tribe_test_data:/var/lib/postgresql/data
+
+  redis_test:
+    image: redis:6.2.6
+    ports:
+      - "9091:6379"
+    command: redis-server --requirepass "mnbBYm3Ov3eARud4JYKswAwPZv04Sh0F"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
+volumes:
+  lg_tribe_data:
+  lg_tribe_test_data:
