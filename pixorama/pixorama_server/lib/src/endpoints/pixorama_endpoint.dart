@@ -31,6 +31,8 @@ class PixoramaEndpoint extends Endpoint
     }
 
     _pixelData[pixelIndex] = colorIndex;
+
+    session
    }
 
    
