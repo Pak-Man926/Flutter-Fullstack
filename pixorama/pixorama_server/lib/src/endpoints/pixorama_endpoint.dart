@@ -16,5 +16,5 @@ class PixoramaEndpoint extends Endpoint
     _numPixels,
      _defaultPixelColor);
 
-   static const _channelPixelAdded  
+   static const _channelPixelAdded =   
 }
