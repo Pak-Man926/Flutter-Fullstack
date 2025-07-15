@@ -38,6 +38,9 @@ class _PixoramaState extends State<Pixorama>
           });
         }
         else if(update is ImageUpdate)
+        {
+          
+        }
       }
     }
   }
