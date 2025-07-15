@@ -37,7 +37,7 @@ class PixoramaEndpoint extends Endpoint
       ImageUpdate(
         pixelIndex: pixxelIndex,
         colorIndex: colorIndex,
-      )
+      ),
     )
    }
 
