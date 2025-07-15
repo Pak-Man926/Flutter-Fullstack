@@ -18,5 +18,5 @@ class PixoramaEndpoint extends Endpoint
 
    static const _channelPixelAdded = "pixel_added";  
 
-   Future<void> setPixel(Session session, required)
+   Future<void> setPixel(Session session, required int colorIndex)
 }
