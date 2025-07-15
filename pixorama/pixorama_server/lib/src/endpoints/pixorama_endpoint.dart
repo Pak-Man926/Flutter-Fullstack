@@ -41,7 +41,7 @@ class PixoramaEndpoint extends Endpoint
     );
    }
 
-   Stream imageUpdate()
+   Stream imageUpdate(Session session)
 
    
 }
