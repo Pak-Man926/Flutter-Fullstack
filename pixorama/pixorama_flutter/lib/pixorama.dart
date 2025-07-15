@@ -16,6 +16,6 @@ class _PixoramaState extends State<Pixorama>
   @override
   void initState()
   {
-    super
+    super.init
   }
 }
