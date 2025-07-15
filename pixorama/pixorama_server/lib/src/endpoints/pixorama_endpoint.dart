@@ -27,7 +27,7 @@ class PixoramaEndpoint extends Endpoint
 
     if(pixelIndex < 0 || pixelIndex >= _numPixels)
     {
-      throw FormatException("Pixel Index is out of range: $pixelIndex")''
+      throw FormatException("Pixel Index is out of range: $pixelIndex")
     }
    }
 
