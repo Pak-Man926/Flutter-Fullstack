@@ -1,0 +1,44 @@
+services:
+  # Development services
+  postgres:
+    image: pgvector/pgvector:pg16
+    ports:
+      - "8090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: pixorama
+      POSTGRES_PASSWORD: "NzPr60yknUJgW-enw7hc4z3VteAF1cZ_"
+    volumes:
+      - pixorama_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:6.2.6
+    ports:
+      - "8091:6379"
+    command: redis-server --requirepass "6E6F8TWvEDQ3jTuXv-nUDP4DljqplBqF"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
+  # Test services
+  postgres_test:
+    image: pgvector/pgvector:pg16
+    ports:
+      - "9090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: pixorama_test
+      POSTGRES_PASSWORD: "jPf93_7VAIfsb0EGcr53cQMKP5J8A7x-"
+    volumes:
+      - pixorama_test_data:/var/lib/postgresql/data
+
+  redis_test:
+    image: redis:6.2.6
+    ports:
+      - "9091:6379"
+    command: redis-server --requirepass "2VB57iUhcNiz5l_JPY_wNFfE21kHXcgm"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
+volumes:
+  pixorama_data:
+  pixorama_test_data:
