@@ -51,7 +51,7 @@ class PixoramaEndpoint extends Endpoint
       height: _imageHeight,
     );
 
-    await for(var imageUpdate in )
+    await for(var imageUpdate in updateStream)
    }
 
    
