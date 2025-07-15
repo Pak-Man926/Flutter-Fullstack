@@ -8,5 +8,5 @@ class PixoramaEndpoint extends Endpoint
   static const _numPixels = _imageWidth * _imageHeight;
 
   static const _numColorsInPalette =16;
-  
+  statuc
 }
