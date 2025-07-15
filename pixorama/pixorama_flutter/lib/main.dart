@@ -16,5 +16,5 @@ void main()
 class PixoromaApp extends StatelessWidget
 {
   @override
-  W
+  Widget build
 }
