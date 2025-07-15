@@ -31,7 +31,7 @@ class _PixoramaState extends State<Pixorama>
 
       await for(final update in imageUpdates)
       {
-        if(update is Image)
+        if(update is ImageDate)
       }
     }
   }
