@@ -11,5 +11,5 @@ class Pixorama extends StatefulWidget
 
 class _PixoramaState extends State<Pixorama>
 {
-  PixelImageController? _
+  PixelImageController? _imageController;
 }
