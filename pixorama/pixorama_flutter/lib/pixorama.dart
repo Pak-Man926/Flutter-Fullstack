@@ -33,7 +33,7 @@ class _PixoramaState extends State<Pixorama>
       {
         if(update is ImageDate)
         {
-          set
+          setState
         }
       }
     }
