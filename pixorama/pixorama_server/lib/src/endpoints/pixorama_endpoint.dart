@@ -50,7 +50,8 @@ class PixoramaEndpoint extends Endpoint
       width: _imageWidth,
       height: _imageHeight,
     );
-    
+
+    await for
    }
 
    
