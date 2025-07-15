@@ -19,7 +19,8 @@ class PixoramaApp extends StatelessWidget
   Widget build(BuildContext context)
   {
     return MaterialApp(
-      title: "Pixorama"
+      title: "Pixorama",
+      
     );
   }
 }
