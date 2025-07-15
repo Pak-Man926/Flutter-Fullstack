@@ -5,7 +5,7 @@ import "../../main.dart";
 
 class Pixorama extends StatefulWidget
 {
-  const 
+  const Pixo
   @override
   State<Pixorama> createState() => _PixoramaState();
 }
