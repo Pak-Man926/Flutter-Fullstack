@@ -17,6 +17,7 @@ class _PixoramaState extends State<Pixorama>
   void initState()
   {
     super.initState();
-    
+
+    _
   }
 }
