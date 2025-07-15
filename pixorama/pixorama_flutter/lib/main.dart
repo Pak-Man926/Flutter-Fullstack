@@ -5,4 +5,4 @@ import "package:serverpod_flutter/serverpod_flutter.dart";
 import "src/pixorama.dart";
 
 var client = Client("http://$localhost:8080/")
-  ..
+  ..c
