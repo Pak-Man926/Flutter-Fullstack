@@ -42,6 +42,6 @@ class _PixoramaState extends State<Pixorama>
           _imageController?.setPixelIndex(pixelIndex: update.pixelIndex, colorIndex: update.colorIndex);
         }
       }
-    } on MethodStreamException catch
+    } on MethodStreamException catch()
   }
 }
