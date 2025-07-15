@@ -43,7 +43,7 @@ class PixoramaEndpoint extends Endpoint
 
    Stream imageUpdate(Session session) async*
    {
-    var updateStream = session.messages.createStream<ImageUpdate>
+    var updateStream = session.messages.createStream<ImageUpdate>()
    }
 
    
