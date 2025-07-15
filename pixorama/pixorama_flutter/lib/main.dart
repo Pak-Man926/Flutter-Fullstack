@@ -21,7 +21,7 @@ class PixoramaApp extends StatelessWidget
     return MaterialApp(
       title: "Pixorama",
       theme: ThemeData(
-        primarySwatch: Color
+        primarySwatch: Colors.blue
       )
     );
   }
