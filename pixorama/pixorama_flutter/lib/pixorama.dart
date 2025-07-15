@@ -18,6 +18,6 @@ class _PixoramaState extends State<Pixorama>
   {
     super.initState();
 
-    _listenToUpdate
+    _listenToUpdates()
   }
 }
