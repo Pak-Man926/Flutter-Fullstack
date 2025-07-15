@@ -1,4 +1,4 @@
 Class: ImageUpdate
 fields:
     pixelIndex: int
-    
+    color:
