@@ -49,7 +49,7 @@ class PixoramaEndpoint extends Endpoint
       pixels: _pixelData.buffer.asByteData(),
       width: _imageWidth,
       height: _imageHeight,
-    )
+    );
    }
 
    
