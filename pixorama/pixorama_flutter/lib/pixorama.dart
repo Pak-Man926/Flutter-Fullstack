@@ -35,7 +35,7 @@ class _PixoramaState extends State<Pixorama>
         {
           setState((){
             _imageController = PixelImageController(palette: PixelPalette.rPlace(), width: update.width, height: update.height, pixels: update.pixels);
-          })
+          });
         }
       }
     }
