@@ -22,7 +22,8 @@ class PixoramaApp extends StatelessWidget
       title: "Pixorama",
       theme: ThemeData(
         primarySwatch: Colors.blue,
-      )
+      ),
+      
     );
   }
 }
