@@ -10,3 +10,6 @@ class Pixorama extends StatefulWidget
 }
 
 class _PixoramaState extends State<Pixorama>
+{
+  
+}
