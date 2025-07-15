@@ -6,3 +6,5 @@ import "src/pixorama.dart";
 
 var client = Client("http://$localhost:8080/")
   ..connectivityMonitor = FlutterConnectivityMonitor();
+
+  
