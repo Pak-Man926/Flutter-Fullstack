@@ -49,6 +49,4 @@ class _PixoramaState extends State<Pixorama>
           }
     }
   }
-
-   await Future.delayed(Duration(seconds:5));
 }
