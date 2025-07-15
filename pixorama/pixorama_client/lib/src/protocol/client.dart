@@ -10,7 +10,37 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
-import 'protocol.dart' as _i2;
+import 'dart:async' as _i2;
+import 'protocol.dart' as _i3;
+
+/// {@category Endpoint}
+class EndpointPixorama extends _i1.EndpointRef {
+  EndpointPixorama(_i1.EndpointCaller caller) : super(caller);
+
+  @override
+  String get name => 'pixorama';
+
+  _i2.Future<void> setPixel({
+    required int colorIndex,
+    required int pixelIndex,
+  }) =>
+      caller.callServerEndpoint<void>(
+        'pixorama',
+        'setPixel',
+        {
+          'colorIndex': colorIndex,
+          'pixelIndex': pixelIndex,
+        },
+      );
+
+  _i2.Stream<dynamic> imageUpdate() =>
+      caller.callStreamingServerEndpoint<_i2.Stream<dynamic>, dynamic>(
+        'pixorama',
+        'imageUpdate',
+        {},
+        {},
+      );
+}
 
 class Client extends _i1.ServerpodClientShared {
   Client(
@@ -28,7 +58,7 @@ class Client extends _i1.ServerpodClientShared {
     bool? disconnectStreamsOnLostInternetConnection,
   }) : super(
           host,
-          _i2.Protocol(),
+          _i3.Protocol(),
           securityContext: securityContext,
           authenticationKeyManager: authenticationKeyManager,
           streamingConnectionTimeout: streamingConnectionTimeout,
@@ -37,10 +67,14 @@ class Client extends _i1.ServerpodClientShared {
           onSucceededCall: onSucceededCall,
           disconnectStreamsOnLostInternetConnection:
               disconnectStreamsOnLostInternetConnection,
-        ) {}
+        ) {
+    pixorama = EndpointPixorama(this);
+  }
+
+  late final EndpointPixorama pixorama;
 
   @override
-  Map<String, _i1.EndpointRef> get endpointRefLookup => {};
+  Map<String, _i1.EndpointRef> get endpointRefLookup => {'pixorama': pixorama};
 
   @override
   Map<String, _i1.ModuleEndpointCaller> get moduleLookup => {};
