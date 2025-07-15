@@ -10,5 +10,5 @@ class PixoramaEndpoint extends Endpoint
   static const _numColorsInPalette =16;
   static const _defaultPixelColor = 2;
 
-  final _pixelData = Uint8List(_)
+  final _pixelData = Uint8List(_num)
 }
