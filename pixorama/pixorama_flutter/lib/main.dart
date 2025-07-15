@@ -20,7 +20,9 @@ class PixoramaApp extends StatelessWidget
   {
     return MaterialApp(
       title: "Pixorama",
-      theme: ThemeData()
+      theme: ThemeData(
+        
+      )
     );
   }
 }
