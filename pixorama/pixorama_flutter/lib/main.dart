@@ -24,7 +24,7 @@ class PixoramaApp extends StatelessWidget
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        body: const Pixorama
+        body: const Pixorama()
       )
     );
   }
