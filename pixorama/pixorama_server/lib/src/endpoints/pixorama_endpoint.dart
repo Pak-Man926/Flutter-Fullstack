@@ -36,7 +36,7 @@ class PixoramaEndpoint extends Endpoint
       _channelPixelAdded,
       ImageUpdate(
         pixelIndex: pixxelIndex,
-        
+        colorIndex: colorIndex,
       )
     )
    }
