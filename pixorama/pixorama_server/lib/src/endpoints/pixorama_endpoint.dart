@@ -38,7 +38,7 @@ class PixoramaEndpoint extends Endpoint
         pixelIndex: pixxelIndex,
         colorIndex: colorIndex,
       ),
-    )
+    );
    }
 
    
