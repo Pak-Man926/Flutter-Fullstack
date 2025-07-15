@@ -41,7 +41,7 @@ class PixoramaEndpoint extends Endpoint
     );
    }
 
-   Stream 
+   Stream ima
 
    
 }
