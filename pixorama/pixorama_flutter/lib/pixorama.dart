@@ -4,3 +4,6 @@ import "package:pixorama_client/pixorama_client.dart";
 import "../../main.dart";
 
 class Pixorama extends StatefulWidget
+{
+  
+}
