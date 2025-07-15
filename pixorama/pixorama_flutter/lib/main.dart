@@ -10,5 +10,5 @@ var client = Client("http://$localhost:8080/")
 
 void main()
 {
-  
+  runApp
 }
