@@ -45,7 +45,7 @@ class PixoramaEndpoint extends Endpoint
    {
     var updateStream = session.messages.createStream<ImageUpdate>(_channelPixelAdded);
 
-    
+    yield  ImageData()
    }
 
    
