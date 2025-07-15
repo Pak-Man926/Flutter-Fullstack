@@ -12,5 +12,5 @@ class PixoramaEndpoint extends Endpoint
 
   final _pixelData = Uint8List(_numPixels)
     ..fillRange(0,
-    , end)
+    _, end)
 }
