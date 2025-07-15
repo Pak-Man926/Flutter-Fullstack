@@ -13,7 +13,7 @@ void main()
   runApp(const PixoramaApp();)
 }
 
-class PixoromaApp extends StatelessWidget
+class PixoramaApp extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
