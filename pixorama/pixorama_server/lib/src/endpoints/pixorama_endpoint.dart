@@ -22,7 +22,7 @@ class PixoramaEndpoint extends Endpoint
    {
     if(colorIndex < 0 || colorIndex >= _numColorsInPalette)
     {
-      throw FormatException("")
+      throw FormatException("Color")
     }
    }
 }
