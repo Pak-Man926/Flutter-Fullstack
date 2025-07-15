@@ -23,5 +23,5 @@ class _PixoramaState extends State<Pixorama>
     _listenToUpdates();
   }
 
-  Future<void> 
+  Future<void> _listen
 }
