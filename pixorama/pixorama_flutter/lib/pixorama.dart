@@ -27,7 +27,7 @@ class _PixoramaState extends State<Pixorama>
   {
     while(true)
     {
-      final image
+      final imageUpdates = 
     }
   }
 }
