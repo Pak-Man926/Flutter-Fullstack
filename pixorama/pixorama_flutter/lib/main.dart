@@ -15,5 +15,5 @@ void main()
 
 class PixoromaApp extends StatelessWidget
 {
-  class
+  
 }
