@@ -31,12 +31,9 @@ void run(List<String> args) async {
   // schedule tasks to be executed at a later time. Future calls are executed in
   // the background. Their schedule is persisted to the database, so you will
   // not lose them if the server is restarted.
-
-  
 }
 
 /// Names of all future calls in the server.
 ///
 /// This is better than using a string literal, as it will reduce the risk of
 /// typos and make it easier to refactor the code.
-
