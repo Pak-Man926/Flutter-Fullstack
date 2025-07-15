@@ -33,7 +33,8 @@ class PixoramaEndpoint extends Endpoint
     _pixelData[pixelIndex] = colorIndex;
 
     session.messages.postMessage(
-      _channelPixelAdded
+      _channelPixelAdded,
+      
     )
    }
 
