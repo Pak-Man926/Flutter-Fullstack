@@ -1,2 +1,2 @@
 import "package:flutter/material.dart";
-import "package:pixels/"
+import "package:pixels/pixels.dart"
