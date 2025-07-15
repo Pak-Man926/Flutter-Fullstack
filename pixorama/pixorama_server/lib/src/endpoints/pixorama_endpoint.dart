@@ -48,7 +48,7 @@ class PixoramaEndpoint extends Endpoint
     yield  ImageData(
       pixels: _pixelData.buffer.asByteData(),
       width: _imageWidth,
-      height: 
+      height: _
     )
    }
 
