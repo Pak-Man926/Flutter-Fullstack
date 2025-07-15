@@ -34,7 +34,7 @@ class _PixoramaState extends State<Pixorama>
         if(update is ImageDate)
         {
           setState((){
-            _imageController = PixelImageController(palette: PixelPalette., width: width, height: height)
+            _imageController = PixelImageController(palette: PixelPalette.rPlace(), width: width, height: height)
           })
         }
       }
