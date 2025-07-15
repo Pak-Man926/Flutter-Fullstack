@@ -1,4 +1,3 @@
-
 import 'package:serverpod/serverpod.dart';
 
 import 'package:pixorama_server/src/web/routes/root.dart';
