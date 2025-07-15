@@ -39,7 +39,7 @@ class _PixoramaState extends State<Pixorama>
         }
         else if(update is ImageUpdate)
         {
-          _imageController?.setPixelIndex(pixelIndex: pixelIndex, colorIndex: colorIndex)
+          _imageController?.setPixelIndex(pixelIndex: updatepixelIndex, colorIndex: colorIndex)
         }
       }
     }
