@@ -26,5 +26,5 @@ class PixoramaEndpoint extends Endpoint
     }
    }
 
-   if
+   if()
 }
