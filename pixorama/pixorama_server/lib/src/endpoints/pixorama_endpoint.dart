@@ -51,7 +51,7 @@ class PixoramaEndpoint extends Endpoint
       height: _imageHeight,
     );
 
-    await for
+    await for()
    }
 
    
