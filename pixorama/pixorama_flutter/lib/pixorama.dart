@@ -55,7 +55,7 @@ class _PixoramaState extends State<Pixorama>
             _imageController = null;
           });
           break;
-        }
+        
     }
     }
   }
