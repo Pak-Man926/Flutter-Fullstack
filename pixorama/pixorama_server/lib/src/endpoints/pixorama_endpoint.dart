@@ -35,7 +35,7 @@ class PixoramaEndpoint extends Endpoint
     session.messages.postMessage(
       _channelPixelAdded,
       ImageUpdate(
-        pixelIndex: pixxelIndex,
+        pixelIndex: pixelIndex,
         colorIndex: colorIndex,
       ),
     );
