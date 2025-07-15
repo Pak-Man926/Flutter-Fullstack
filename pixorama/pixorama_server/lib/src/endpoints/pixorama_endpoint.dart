@@ -18,5 +18,5 @@ class PixoramaEndpoint extends Endpoint
 
    static const _channelPixelAdded = "pixel_added";  
 
-   
+   Future
 }
