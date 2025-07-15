@@ -1,6 +1,6 @@
 import "dart:typed_data";
 import "package:serverpod/serverpod.dart";
-import "package:pixora"
+import "package:pixorama"
 
 class PixoramaEndpoint extends Endpoint
 {
