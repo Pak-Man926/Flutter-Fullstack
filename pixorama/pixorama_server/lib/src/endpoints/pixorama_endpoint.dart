@@ -5,5 +5,5 @@ class PixoramaEndpoint extends Endpoint
 {
   static const _imageWidth = 64;
   static const _imageHeight = 64;
-  static const _numPixels = _imageWidth
+  static const _numPixels = _imageWidth 
 }
