@@ -29,7 +29,7 @@ class _PixoramaState extends State<Pixorama>
     {
       final imageUpdates = client.pixorama.imageUpdate();
 
-      await for(final)
+      await for(final update in )
     }
   }
 }
