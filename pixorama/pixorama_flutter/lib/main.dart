@@ -13,4 +13,4 @@ void main()
   runApp(const PixoramaApp();)
 }
 
-class Pixoroma
+class PixoromaApp 
