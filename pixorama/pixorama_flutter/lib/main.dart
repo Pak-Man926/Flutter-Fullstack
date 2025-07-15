@@ -19,6 +19,7 @@ class PixoramaApp extends StatelessWidget
   Widget build(BuildContext context)
   {
     return MaterialApp(
+      
       title: "Pixorama",
       theme: ThemeData(
         primarySwatch: Colors.blue,
