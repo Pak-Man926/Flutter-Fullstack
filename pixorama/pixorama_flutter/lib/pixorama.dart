@@ -45,7 +45,17 @@ class _PixoramaState extends State<Pixorama>
         {
           setState(() {
         _imageController = null;
-      });
+          });
+          break;
+        }
+        catch(e)
+        {
+          debugPrint("Error while listening to image updates: $e");
+          setState(() {
+            _imageController = null;
+          });
+          break;
+        }
     }
     }
   }
