@@ -1,4 +1,4 @@
 Class: ImageData
 fields:
     pixels: ByteData
-    
+    width: int
