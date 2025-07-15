@@ -9,4 +9,4 @@ class Pixorama extends StatefulWidget
   State<Pixorama> createState() => _PixoramaState();
 }
 
-class 
+class _PixoramaState extends State<Pixorama>
