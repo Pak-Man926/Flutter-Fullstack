@@ -13,4 +13,4 @@ void main()
   runApp(const PixoramaApp();)
 }
 
-class PixoromaApp 
+class PixoromaApp extends StatelessWidget
