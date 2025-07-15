@@ -43,7 +43,7 @@ class _PixoramaState extends State<Pixorama>
         }
       } on MethodStreamException catch(_)
         {
-      setState(() {
+          setState(() {
         _imageController = null;
       });
     }
