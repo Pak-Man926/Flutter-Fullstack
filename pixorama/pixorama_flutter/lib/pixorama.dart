@@ -5,5 +5,5 @@ import "../../main.dart";
 
 class Pixorama extends StatefulWidget
 {
-  
+  @override
 }
