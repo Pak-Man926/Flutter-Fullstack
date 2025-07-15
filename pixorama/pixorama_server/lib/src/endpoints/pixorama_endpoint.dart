@@ -52,6 +52,9 @@ class PixoramaEndpoint extends Endpoint
     );
 
     await for(var imageUpdate in updateStream)
+    {
+      yield imageUpdate;
+    }
    }
 
    
