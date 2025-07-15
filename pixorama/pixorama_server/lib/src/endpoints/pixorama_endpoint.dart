@@ -25,7 +25,8 @@ class PixoramaEndpoint extends Endpoint
       throw FormatException("Color Index is out of range: $colorIndex");
     }
 
-    
+    if(pixelIndex < 0 || pixelIndex >= _numPixels)
+   {}
    }
 
    
