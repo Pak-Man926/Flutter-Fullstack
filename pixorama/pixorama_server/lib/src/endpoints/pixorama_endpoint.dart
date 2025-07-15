@@ -3,5 +3,5 @@ import "package:serverpod/serverpod.dart";
 
 class PixoramaEndpoint extends Endpoint
 {
-  static const _image
+  static const _imageWidth
 }
