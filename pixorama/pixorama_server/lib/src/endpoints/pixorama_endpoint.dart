@@ -21,6 +21,8 @@ class PixoramaEndpoint extends Endpoint
    Future<void> setPixel(Session session, {required int colorIndex, required int pixelIndex}) async
    {
     if(colorIndex < 0 || colorIndex >= _numColorsInPalette)
-    
+    {
+      
+    }
    }
 }
