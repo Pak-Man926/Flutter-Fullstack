@@ -39,7 +39,7 @@ class _PixoramaState extends State<Pixorama>
         }
         else if(update is ImageUpdate)
         {
-          _imageController?.set
+          _imageController?.setP
         }
       }
     }
