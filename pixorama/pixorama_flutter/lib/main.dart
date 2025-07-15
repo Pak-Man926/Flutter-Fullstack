@@ -10,7 +10,7 @@ var client = Client("http://$localhost:8080/")
 
 void main()
 {
-  runApp(const PixoramaApp();)
+  runApp(const PixoramaApp())
 }
 
 class PixoramaApp extends StatelessWidget
