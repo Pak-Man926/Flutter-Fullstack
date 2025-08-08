@@ -15,6 +15,8 @@ void main()
 
 class PixoramaApp extends StatelessWidget
 {
+  const PixoramaApp({super.key});
+
   @override
   Widget build(BuildContext context)
   {

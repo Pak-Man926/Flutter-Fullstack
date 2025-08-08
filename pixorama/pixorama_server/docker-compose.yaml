@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: pixorama
-      POSTGRES_PASSWORD: "NzPr60yknUJgW-enw7hc4z3VteAF1cZ_"
+      POSTGRES_PASSWORD: "NegepvbTZGpAlYZjpfbJtjq-EVsYPjK3"
     volumes:
       - pixorama_data:/var/lib/postgresql/data
 
@@ -15,7 +15,7 @@ services:
     image: redis:6.2.6
     ports:
       - "8091:6379"
-    command: redis-server --requirepass "6E6F8TWvEDQ3jTuXv-nUDP4DljqplBqF"
+    command: redis-server --requirepass "QoljLZKNNP4eOtypPDrRNtqGgvn8noq8"
     environment:
       - REDIS_REPLICATION_MODE=master
 
@@ -27,7 +27,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: pixorama_test
-      POSTGRES_PASSWORD: "jPf93_7VAIfsb0EGcr53cQMKP5J8A7x-"
+      POSTGRES_PASSWORD: "G2yvr1DRcUcufTL9X14_WuQt0v7_Omn6"
     volumes:
       - pixorama_test_data:/var/lib/postgresql/data
 
@@ -35,7 +35,7 @@ services:
     image: redis:6.2.6
     ports:
       - "9091:6379"
-    command: redis-server --requirepass "2VB57iUhcNiz5l_JPY_wNFfE21kHXcgm"
+    command: redis-server --requirepass "hMFr-jsfu58I54nrfE4e6OuOUwJW1aci"
     environment:
       - REDIS_REPLICATION_MODE=master
 

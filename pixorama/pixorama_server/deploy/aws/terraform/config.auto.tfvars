@@ -81,8 +81,8 @@ staging_autoscaling_desired_capacity = 1
 
 # The deployment bucket name needs to be unique and can only contain lower case
 # letters and dashes (no underscored allowed).
-deployment_bucket_name              = "pixorama-deployment-9692000"
-public_storage_bucket_name          = "pixorama-public-storage-9692000"
-private_storage_bucket_name         = "pixorama-private-storage-9692000"
-public_storage_bucket_name_staging  = "pixorama-public-storage-staging-9692000"
-private_storage_bucket_name_staging = "pixorama-private-storage-staging-9692000"
+deployment_bucket_name              = "pixorama-deployment-3055581"
+public_storage_bucket_name          = "pixorama-public-storage-3055581"
+private_storage_bucket_name         = "pixorama-private-storage-3055581"
+public_storage_bucket_name_staging  = "pixorama-public-storage-staging-3055581"
+private_storage_bucket_name_staging = "pixorama-private-storage-staging-3055581"
